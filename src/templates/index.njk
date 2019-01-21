@@ -1,0 +1,51 @@
+{% set pageClass = "page-home" %}
+{% set pageTitle = "Home page" %}
+
+{% extends "partials/_layout.njk" %}
+
+{% block content %}
+
+<div class="section pt-5 pb-5">
+  <div class="container">
+    <h1 class="text-mega mb-4">Game table app</h1>
+    <h2 class="text-subheader mb-4">Made with 💜 by <a href="https://stan.bg/" class="link-primary" target="_blank" rel="noopener">Martin Dobrev</a></h2>
+  </div>
+</div>
+
+<div class="section pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-title mb-3">Sessions</h2>
+        <div id="tableResults"></div>
+
+        <h2 class="text-title mb-3 mt-5">Players</h2>
+        <div id="tablePlayers"></div>
+      </div>
+      <div class="offset-md-1 col-md-3">
+        <h2 class="text-title mb-3 mt-5">Add new session</h2>
+        <form id="formNewSession">
+          <div class="form-group">
+            <label for="selectGames">Game name</label>
+            <select class="form-control" id="selectGames"></select>
+          </div>
+          <div class="form-group">
+            <label for="selectGames">I place</label>
+            <select class="form-control select-players"></select>
+          </div>
+          <div class="form-group">
+            <label for="selectGames">II place</label>
+            <select class="form-control select-players"></select>
+          </div>
+          <div class="form-group">
+            <label for="selectGames">III place</label>
+            <select class="form-control select-players"></select>
+          </div>
+          <button class="btn btn-sm btn-primary" type="submit">Add session</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+// Fonts
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../fonts/googlesans-bold-webfont.woff2') format('woff2'),
+        url('../fonts/googlesans-bold-webfont.woff') format('woff');
+  font-display: swap;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../fonts/googlesans-medium-webfont.woff2') format('woff2'),
+        url('../fonts/googlesans-medium-webfont.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('../fonts/googlesans-regular-webfont.woff2') format('woff2'),
+        url('../fonts/googlesans-regular-webfont.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+}
+
+// Mixins and functions
+@mixin text() {
+  font-family: $font-family-primary;
+  font-weight: normal;
+}
+
+@function texts-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// Classes
+@each $size in map-keys($texts) {
+  .text-#{$size} {
+    @include text;
+    font-size: texts-deep-get($texts, $size, 'default', 'font-size');
+    line-height: texts-deep-get($texts, $size, 'default', 'line-height');
+
+    @include media-breakpoint-up(md) {
+      font-size: texts-deep-get($texts, $size, 'md', 'font-size');
+      line-height: texts-deep-get($texts, $size, 'md', 'line-height');
+    }
+  }
+}
+
+// Custom styles
+
+// Links
+.link {
+  color: $body-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $body-color;
+    text-decoration: underline;
+  }
+}
+
+.link-primary {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
+}

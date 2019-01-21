@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Boostrap Project Start",
+    "description": "Site description",
+    "keywords": "Site keywords",
+    "author": "Site keywords",
+    "favicon": "img/icons/favicon.png"
+  },
+  "fonts": [
+    "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700",
+    "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+  ]
+}
